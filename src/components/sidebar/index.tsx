@@ -18,7 +18,7 @@ const socialMedias: SocialMedia[] = [
     {component: GitHub, label: 'Git Hub', link: 'https://github.com/kevynsax'}
 ];
 
-export default class Sidebar extends React.Component {
+export default class Sidebar extends Component {
     renderMenu = (item: string, i: number) =>
         (<span key={i}>{item}</span>);
 

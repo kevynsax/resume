@@ -1,5 +1,7 @@
+@import "../../variables";
+
 .sidebar {
-    width: 300px;
+    width: $widthSideBar;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
     color: #888;
