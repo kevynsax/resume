@@ -1,0 +1,15 @@
+$heightAvatar: 160px;
+
+.avatar{
+  text-align: center;
+  
+  position: relative;
+  top: ($heightAvatar + 7px) / 2 * -1;
+  
+  
+  img{
+    width: $heightAvatar;
+    border-radius: 50%;
+    box-shadow: 5px 8px 10px 0 grey;
+  }
+}
