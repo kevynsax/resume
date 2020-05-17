@@ -1,14 +1,14 @@
-$heightAvatar: 160px;
+$heightAvatarImage: 160px;
+@import "../../variables";
 
 .avatar{
-  text-align: center;
+  position: absolute;
   
-  position: relative;
-  top: ($heightAvatar + 7px) / 2 * -1;
-  
+  top: calc(#{$heightCover} - #{$heightAvatarImage / 2});
+  left: calc((#{$widthBody} / 2) + #{$widthSideBar} - #{$heightAvatarImage / 2});
   
   img{
-    width: $heightAvatar;
+    width: $heightAvatarImage;
     border-radius: 50%;
     box-shadow: 5px 8px 10px 0 grey;
   }
