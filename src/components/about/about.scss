@@ -1,4 +1,46 @@
-.about{
-  margin: 0;
-  background-color: tomato;
+@import '../../variables';
+
+.about {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    .title {
+        margin: 24px 0;
+        width: 100%;
+        
+        h1, h6 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        h1 {    
+            color: black;
+        }
+
+        h6 {
+            color: $colorFont;
+        }
+    }
+    
+    .infos{
+        .info{
+            padding: 4px 0;
+            span{
+                &:first-child{
+                    font-weight: 600;
+                }
+                
+                &:last-child{
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+    
+    .actions{
+        padding: 16px 0;
+    }
 }

@@ -14,3 +14,9 @@ body, html{
   src: url("./assets/fonts/Biotif-Black.ttf") format('truetype');
   font-weight: bold;
 }
+
+@font-face {
+  font-family: Biotif;
+  src: url("./assets/fonts/Biotif-Bold.ttf") format('truetype');
+  font-weight: 600;
+}

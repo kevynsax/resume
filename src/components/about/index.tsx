@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import './about.scss';
+import Button from "../utils/button";
 
 interface Info {
     label: string;
@@ -11,11 +12,11 @@ export default class About extends Component {
 
         const today = new Date() as any;
         const birthDay = new Date(1993, 4, 13) as any;
-        
+
         const diffTime = today - birthDay;
-        
+
         const age = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.4));
-        
+
         const infos: Info[] = [
             {label: "Name", value: "Kevyn Klava"},
             {label: "Age", value: age.toString()},
@@ -26,20 +27,20 @@ export default class About extends Component {
         return (
             <div className="about">
                 <div className="title">
-                    <h3>About me</h3>
+                    <h1>About me</h1>
                     <h6>Get to know me</h6>
                 </div>
                 
-                <div className="leftSide">
+                <div>
                     <div className="infos">
                         {infos.map(this.renderInfo)}
                     </div>
                     <div className="actions">
-                        <span className="button">Download CV</span>
+                        <Button>Download CV</Button>
                     </div>
                 </div>
                 
-                <div className="rightSide">
+                <div className="texts">
                     <h5>let me introduce my self</h5>
                     <h3>I'm Kevyn Klava, a Full Stack Developer focused on .Net and NodeJs on Backend</h3>
                     <div className="text">
@@ -52,8 +53,8 @@ export default class About extends Component {
     
     renderInfo = (info: Info, index: number) => (
         <div className="info" key={index}>
-            <span className="label">{info.label}: </span>
-            <span className="value">{info.value}</span>
+            <span>{info.label}: </span>
+            <span>{info.value}</span>
         </div>
     )
 }
