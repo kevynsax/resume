@@ -32,27 +32,32 @@ export default class About extends Component {
                     <h6>Get to know me</h6>
                 </div>
 
-                <div className="pictureWrapper">
-                    <div className="picture">
-                        <img src={Avatar} alt=""/>
-                    </div>
-                </div>
-
-                <div className="texts">
-                    <h5>let me introduce my self</h5>
-                    <h3>I'm Kevyn Klava, a Full Stack Developer focused on .Net and NodeJs on the backend</h3>
-                    <div className="text">
-                        I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI designs
-                        and websites for years, which comply with the latest design trends. I help convert a vision and
-                        an idea into meaningful and useful products. Having a sharp eye for product evolution helps me
-                        prioritize tasks, iterate fast and deliver faster.
+                <div className="bodyAbout">
+                    <div className="pictureWrapper">
+                        <div className="picture">
+                            <img src={Avatar} alt=""/>
+                        </div>
                     </div>
 
-                    <div className="infos">
-                        {infos.map(this.renderInfo)}
-                    </div>
-                    <div className="actions">
-                        <DownloadButton>Download CV</DownloadButton>
+                    <div className="texts">
+                        <h5>let me introduce my self</h5>
+                        <h3>I'm Kevyn Klava, a Full Stack Developer focused on .Net and NodeJs on the backend</h3>
+                        <div className="text">
+                            I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI
+                            designs
+                            and websites for years, which comply with the latest design trends. I help convert a vision
+                            and
+                            an idea into meaningful and useful products. Having a sharp eye for product evolution helps
+                            me
+                            prioritize tasks, iterate fast and deliver faster.
+                        </div>
+
+                        <div className="infos">
+                            {infos.map(this.renderInfo)}
+                        </div>
+                        <div className="actions">
+                            <DownloadButton>Download CV</DownloadButton>
+                        </div>
                     </div>
                 </div>
             </div>

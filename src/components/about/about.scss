@@ -3,72 +3,78 @@
 .about {
     padding: 24px 48px;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 
     .title {
         margin: 24px 0;
-        width: 100%;
 
         h1, h6 {
             margin: 0;
             font-weight: bold;
         }
-        
-        h1{
+
+        h1 {
             color: $colorHeadLine
         }
 
     }
 
-    $border-radius: 8px;
+    .bodyAbout {
+        display: flex;
+        flex-direction: row;
 
-    .picture {
-        padding: 2px;
-        border: 1px solid #111;
-        border-radius: $border-radius;
-        margin-right: 16px;
-        background-color: #232323;
+        $border-radius: 8px;
 
-        img {
-            margin: 4px 4px 0;
-            filter: brightness(.6);
-            width: 320px;
+        .picture {
+            padding: 2px;
+            border: 1px solid #111;
             border-radius: $border-radius;
-        }
-    }
+            margin-right: 16px;
+            background-color: #232323;
 
-    .texts {
-        padding-left: 16px;
-        max-width: 50%;
-        
-        h3{
-            color: $colorHeadLine;
-        }
-        .infos {
-            justify-content: space-between;
-            padding: 28px 0 16px;
-
-            .info {
-                padding: 4px 0;
-
-                span {
-                    &:first-child {
-                    }
-
-                    &:last-child {
-                        margin-left: 4px;
-                        font-weight: 600;
-                        color: $colorHeadLine;
-                    }
-                }
+            img {
+                margin: 4px 4px 0;
+                filter: brightness(.6);
+                width: 320px;
+                border-radius: $border-radius;
             }
         }
 
-        .actions {
-            padding: 16px 0;
-        }
+        .texts {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 16px;
 
+            h5{
+                margin: 16px 0 8px;
+            }
+            h3 {
+                color: $colorHeadLine;
+            }
+
+            .infos {
+                justify-content: space-between;
+                padding: 28px 0 16px;
+
+                .info {
+                    padding: 4px 0;
+
+                    span {
+                        &:first-child {
+                        }
+
+                        &:last-child {
+                            margin-left: 4px;
+                            font-weight: 600;
+                            color: $colorHeadLine;
+                        }
+                    }
+                }
+            }
+
+            .actions {
+                padding: 16px 0;
+            }
+        }
     }
 }
