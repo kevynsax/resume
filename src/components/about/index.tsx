@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './about.scss';
 import Button from "../utils/button";
+import Avatar from 'src/assets/images/avatar.png';
 
 interface Info {
     label: string;
@@ -21,7 +22,7 @@ export default class About extends Component {
             {label: "Name", value: "Kevyn Klava"},
             {label: "Age", value: age.toString()},
             {label: "Email", value: "kevynsax@gmail.com"},
-            {label: "From", value: "Brazil"},
+            {label: "From", value: "Brasilia, Brazil"},
         ];
 
         return (
@@ -30,8 +31,23 @@ export default class About extends Component {
                     <h1>About me</h1>
                     <h6>Get to know me</h6>
                 </div>
-                
-                <div>
+
+                <div className="pictureWrapper">
+                    <div className="picture">
+                        <img src={Avatar} alt=""/>
+                    </div>
+                </div>
+
+                <div className="texts">
+                    <h5>let me introduce my self</h5>
+                    <h3>I'm Kevyn Klava, a Full Stack Developer focused on .Net and NodeJs on the backend</h3>
+                    <div className="text">
+                        I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI designs
+                        and websites for years, which comply with the latest design trends. I help convert a vision and
+                        an idea into meaningful and useful products. Having a sharp eye for product evolution helps me
+                        prioritize tasks, iterate fast and deliver faster.
+                    </div>
+
                     <div className="infos">
                         {infos.map(this.renderInfo)}
                     </div>
@@ -39,18 +55,10 @@ export default class About extends Component {
                         <Button>Download CV</Button>
                     </div>
                 </div>
-                
-                <div className="texts">
-                    <h5>let me introduce my self</h5>
-                    <h3>I'm Kevyn Klava, a Full Stack Developer focused on .Net and NodeJs on Backend</h3>
-                    <div className="text">
-                        I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI designs and websites for years, which comply with the latest design trends. I help convert a vision and an idea into meaningful and useful products. Having a sharp eye for product evolution helps me prioritize tasks, iterate fast and deliver faster.
-                    </div>
-                </div>
             </div>
         );
     };
-    
+
     renderInfo = (info: Info, index: number) => (
         <div className="info" key={index}>
             <span>{info.label}: </span>

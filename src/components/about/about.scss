@@ -1,7 +1,7 @@
 @import '../../variables';
 
 .about {
-    padding: 24px;
+    padding: 24px 48px;
 
     display: flex;
     flex-direction: row;
@@ -25,7 +25,27 @@
         }
     }
     
+    $border-radius: 4px; 
+    .picture{
+        padding: 2px;
+        border: 1px solid grey;
+        border-radius: $border-radius;
+        margin-right: 16px;
+        
+        img{
+            filter: brightness(.6);
+            width: 320px;
+            border-radius: $border-radius;
+        }
+    }
+    
+    .texts{
+        max-width: 50%;
+    }
+    
     .infos{
+        justify-content: space-between;
+        padding-top: 24px;
         .info{
             padding: 4px 0;
             span{
