@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import './about.scss';
-import Button from "../utils/button";
+import DownloadButton from "../utils/download_button";
 import Avatar from 'src/assets/images/avatar.png';
 
 interface Info {
@@ -52,7 +52,7 @@ export default class About extends Component {
                         {infos.map(this.renderInfo)}
                     </div>
                     <div className="actions">
-                        <Button>Download CV</Button>
+                        <DownloadButton>Download CV</DownloadButton>
                     </div>
                 </div>
             </div>
