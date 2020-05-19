@@ -6,61 +6,69 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+
     .title {
         margin: 24px 0;
         width: 100%;
-        
+
         h1, h6 {
             margin: 0;
             font-weight: bold;
         }
-
-        h1 {    
-            color: black;
+        
+        h1{
+            color: $colorHeadLine
         }
 
-        h6 {
-            color: $colorFont;
-        }
     }
-    
-    $border-radius: 4px; 
-    .picture{
+
+    $border-radius: 8px;
+
+    .picture {
         padding: 2px;
-        border: 1px solid grey;
+        border: 1px solid #111;
         border-radius: $border-radius;
         margin-right: 16px;
-        
-        img{
+        background-color: #232323;
+
+        img {
+            margin: 4px 4px 0;
             filter: brightness(.6);
             width: 320px;
             border-radius: $border-radius;
         }
     }
-    
-    .texts{
+
+    .texts {
+        padding-left: 16px;
         max-width: 50%;
-    }
-    
-    .infos{
-        justify-content: space-between;
-        padding-top: 24px;
-        .info{
-            padding: 4px 0;
-            span{
-                &:first-child{
-                    font-weight: 600;
-                }
-                
-                &:last-child{
-                    margin-left: 4px;
+        
+        h3{
+            color: $colorHeadLine;
+        }
+        .infos {
+            justify-content: space-between;
+            padding: 28px 0 16px;
+
+            .info {
+                padding: 4px 0;
+
+                span {
+                    &:first-child {
+                    }
+
+                    &:last-child {
+                        margin-left: 4px;
+                        font-weight: 600;
+                        color: $colorHeadLine;
+                    }
                 }
             }
         }
-    }
-    
-    .actions{
-        padding: 16px 0;
+
+        .actions {
+            padding: 16px 0;
+        }
+
     }
 }
