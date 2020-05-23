@@ -56,7 +56,7 @@ export default class About extends Component {
                             {infos.map(this.renderInfo)}
                         </div>
                         <div className="actions">
-                            <DownloadButton>Download CV</DownloadButton>
+                            <DownloadButton />
                         </div>
                     </div>
                 </div>
