@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 ENV PATH /app/node_modules/.bin:$PATH
 
-RUN npm install
+RUN npm install --silent
 RUN npm run-script build
 
 FROM nginx:1.16.0-alpine
