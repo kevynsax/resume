@@ -3,4 +3,48 @@
 .skills{
     padding: 24px 48px;
     background: $backgroundSection;
+    
+    .evaluations {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 90vh;
+        
+        .skillGroup {
+            margin: 8px 0;
+            width: 30vw;
+            h3{
+                margin: 0;
+            }
+            .skill {
+                margin: 8px 12px;
+                &:hover {
+                    .label .evaluation {
+                        display: block;
+                    }
+
+                    .slider {
+                        border: 1px solid $lightAccentColor;
+
+                        .fulfillment {
+                            background: $lightAccentColor;
+                        }
+                    }
+                }
+
+                .label {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 4px 0;
+
+                    .evaluation {
+                        color: rgba(255, 255, 255, .4);
+                        display: none;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
 }

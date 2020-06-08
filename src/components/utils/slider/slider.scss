@@ -1,0 +1,14 @@
+@import "../../../variables";
+
+$heightSlider: 8px;
+.slider {
+    height: $heightSlider;
+    border: 1px solid $accentColor;
+    border-radius: 3px;
+    
+    .fulfillment{
+        line-height:$heightSlider;
+        background: $accentColor;
+    }
+    
+}

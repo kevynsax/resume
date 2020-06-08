@@ -12,21 +12,21 @@ export interface GroupSkill {
     skills: Skill[];
 }
 
-const skills: GroupSkill[] = [
+const skillGroup: GroupSkill[] = [
     {
         title: "Back-end",
         skills: [
             {
                 label: "NodeJs",
-                evaluation: .7
+                evaluation: .76
             },
             {
                 label: "Dotnet - C#",
-                evaluation: .9
+                evaluation: .91
             },
             {
                 label: "Java",
-                evaluation: .35
+                evaluation: .33
             }
         ]
     },
@@ -39,11 +39,11 @@ const skills: GroupSkill[] = [
             },
             {
                 label: "React",
-                evaluation: .9
+                evaluation: .92
             },
             {
                 label: "Angular",
-                evaluation: .7
+                evaluation: .77
             },
             {
                 label: "Html/Css",
@@ -51,11 +51,11 @@ const skills: GroupSkill[] = [
             },
             {
                 label: "Jquery",
-                evaluation: .5
+                evaluation: .53
             },
             {
                 label: "AngularJs",
-                evaluation: .55
+                evaluation: .59
             }
         ]
     },
@@ -64,35 +64,35 @@ const skills: GroupSkill[] = [
         skills: [
             {
                 label: "Selenium",
-                evaluation: .65
+                evaluation: .68
             },
             {
                 label: "Flutter/Dart",
-                evaluation: .35
+                evaluation: .39
             },
             {
                 label: "Rust",
-                evaluation: .1
+                evaluation: .13
             },
             {
                 label: "Scrum",
-                evaluation: .6
+                evaluation: .87
             },
             {
                 label: "TDD",
-                evaluation: .85
+                evaluation: .83
             },
             {
                 label: "Docker",
-                evaluation: .8
+                evaluation: .89
             },
             {
                 label: "Kubernets/Swarm",
-                evaluation: .5
+                evaluation: .59
             },
             {
                 label: "Clouds(Azure/Aws/Google Cloud)",
-                evaluation: .65
+                evaluation: .68
             }
         ]
     }
@@ -107,28 +107,32 @@ export default class Skills extends Component{
                     <h6>How I evaluate myself</h6>
                 </div>
                 <div className="evaluations">
-                    {skills.map(this.renderGroupSkill)}
+                    {skillGroup.map(this.renderGroupSkill)}
                 </div>
             </div>
         );
-    }
+    };
     
     renderGroupSkill = (group: GroupSkill, index: number) => {
         return (
             <div key={index}>
                 <h3>{group.title}</h3>
-                <div className="groupSkill">
+                <div className="skillGroup">
                     {group.skills.map(this.renderSkill)}
                 </div>
             </div>
         )
-    }
+    };
     
     renderSkill = (skill: Skill, index: number) => {
         return (
             <div className="skill" key={index}>
+                <div className="label">
+                    <span>{skill.label}</span>
+                    <span className="evaluation">{Math.floor(skill.evaluation * 100)}%</span>
+                </div>
                 <Slider percentage={skill.evaluation} />
             </div>
         )
-    }
+    };
 }
