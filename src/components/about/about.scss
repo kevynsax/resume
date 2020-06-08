@@ -1,23 +1,6 @@
 @import '../../variables';
 
-.aboutSection {
-    padding: 24px 48px;
-
-
-    .title {
-        margin: 24px 0;
-
-        h1, h6 {
-            margin: 0;
-            font-weight: bold;
-        }
-
-        h1 {
-            color: $colorHeadLine
-        }
-
-    }
-
+.about {
     .bodyAbout {
         display: flex;
         flex-direction: row;
