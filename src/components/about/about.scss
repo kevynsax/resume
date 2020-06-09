@@ -1,6 +1,7 @@
 @import '../../variables';
 
 .about {
+    
     .bodyAbout {
         display: flex;
         flex-direction: row;
@@ -56,7 +57,7 @@
             }
 
             .actions {
-                padding: 24px 0 16px;
+                padding: 24px 0 24px;
             }
         }
     }

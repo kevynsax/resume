@@ -10,7 +10,7 @@ interface SocialMedia {
 }
 
 const menus: string[] = [
-    'home', 'about', 'services', 'portfolio', 'news', 'contact'
+    'home', 'about', 'skills', 'portfolio', 'posts', 'contact'
 ];
 
 const socialMedias: SocialMedia[] = [
