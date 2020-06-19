@@ -20,7 +20,7 @@ const socialMedias: SocialMedia[] = [
 
 export default class Sidebar extends Component {
     renderMenu = (item: string, i: number) =>
-        (<span key={i}>{item}</span>);
+        (<a key={i} href="">{item}</a>);
 
     renderSocialMedia = (item: SocialMedia, i: number) =>
         (<div key={i} onClick={() => this.openNewTab(item.link)}>

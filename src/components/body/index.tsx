@@ -3,6 +3,7 @@ import Cover from "../cover";
 import "./body.scss";
 import About from "../about";
 import Skills from "../skills";
+import Portfolio from "../portfolio";
 
 export default class Body extends Component{
     render = () => {
@@ -10,6 +11,7 @@ export default class Body extends Component{
             <Cover />
             <About />
             <Skills />
+            <Portfolio />
         </div>);
     };
 }

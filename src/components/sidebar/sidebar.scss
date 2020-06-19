@@ -1,11 +1,11 @@
 @import "../../variables";
-
+$color: #888;
 .sidebar {
     width: $widthSideBar;
     
     height: 100%;
     background: #111;
-    color: #888;
+    color: $color;
 
     display: flex;
     flex-direction: column;
@@ -46,7 +46,9 @@
 
             transition-duration: .15s;
             transition-property: color, border-bottom-color;
-
+            text-decoration: none;
+            color: $color;
+            
             &:hover, .active {
                 color: white;
                 border-bottom-color: rgba(255, 255, 255, .2);
