@@ -8,14 +8,20 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 550px;
+        max-height: 600px;
+        margin-bottom: 24px;
+
+        > * {
+            margin: 12px 0;
+        }
+        h3{
+            margin: 12px 0;
+        }
         
         .skillGroup {
             margin: 8px 0;
             width: 30vw;
-            h3{
-                margin: 0;
-            }
+            
             .skill {
                 margin: 8px 12px;
                 &:hover {

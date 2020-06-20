@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Linkedin from '../../assets/images/linkedin.png';
 import GitHub from '../../assets/images/github.svg';
 import './sidebar.scss';
+import {getMenuId, menus} from "../../utils";
 
 interface SocialMedia {
     component: any;
@@ -9,25 +10,21 @@ interface SocialMedia {
     link: string;
 }
 
-const menus: string[] = [
-    'home', 'about', 'skills', 'portfolio', 'posts', 'contact'
-];
-
 const socialMedias: SocialMedia[] = [
     {component: Linkedin, label: 'Linkedin', link: 'https://www.linkedin.com/in/kevyn-klava-90a15364/'},
     {component: GitHub, label: 'Git Hub', link: 'https://github.com/kevynsax'}
 ];
 
 export default class Sidebar extends Component {
-    renderMenu = (item: string, i: number) =>
-        (<a key={i} href="">{item}</a>);
+    private renderMenu = (item: string, i: number) => 
+        (<a key={i} href={`#${item}`}>{item}</a>);
 
-    renderSocialMedia = (item: SocialMedia, i: number) =>
+    private renderSocialMedia = (item: SocialMedia, i: number) =>
         (<div key={i} onClick={() => this.openNewTab(item.link)}>
             <img src={item.component} alt={item.label}/>
         </div>);
 
-    openNewTab = (link: string) =>
+    private openNewTab = (link: string) =>
         window.open(link);
 
     render = () => {
@@ -38,7 +35,7 @@ export default class Sidebar extends Component {
                     <div>Kevyn Klava</div>
                 </div>
                 <div className="menu">
-                    {menus.map(this.renderMenu)}
+                    {menus.map((x, i) => this.renderMenu(getMenuId(x.type), i))}
                 </div>
                 <div className="socialMedia">
                     {socialMedias.map(this.renderSocialMedia)}

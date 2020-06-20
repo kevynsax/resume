@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./skills.scss";
 import Slider from "../utils/slider";
+import {getMenuId, MenuEnum} from "../../utils";
 
 export interface Skill {
     label: string;
@@ -101,7 +102,7 @@ const skillGroup: GroupSkill[] = [
 export default class Skills extends Component{
     render = () => {
         return (
-            <div className="skills section">
+            <div id={getMenuId(MenuEnum.Skills)} className="skills section">
                 <div className="title">
                     <h1>Skills</h1>
                     <h6>How I evaluate myself</h6>

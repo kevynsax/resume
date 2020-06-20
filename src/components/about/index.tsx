@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import './about.scss';
 import DownloadButton from "../utils/download_button";
 import Avatar from 'src/assets/images/avatar.png';
+import {getMenuId, MenuEnum} from "../../utils";
 
 interface Info {
     label: string;
@@ -26,7 +27,7 @@ export default class About extends Component {
         ];
 
         return (
-            <div className="about section">
+            <div id={getMenuId(MenuEnum.About)} className="about section">
                 <div className="title">
                     <h1>About me</h1>
                     <h6>Get to know me</h6>
