@@ -1,0 +1,27 @@
+.contact{
+
+    .contactBody{
+        
+        display: flex;
+        align-items: flex-start;
+        >*{
+            width: 50%;
+            display: inline;
+        }
+        
+        .information{
+            margin-right: 24px;
+            
+            div{
+                padding: 8px 0;
+                >*{
+                    &:first-child{
+                        font-weight: bold;
+                        padding-right: 4px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

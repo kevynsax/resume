@@ -4,6 +4,7 @@ import "./body.scss";
 import About from "../about";
 import Skills from "../skills";
 import Portfolio from "../portfolio";
+import Contact from "../contact";
 
 export default class Body extends Component{
     render = () => {
@@ -12,6 +13,7 @@ export default class Body extends Component{
             <About />
             <Skills />
             <Portfolio />
+            <Contact />
         </div>);
     };
 }
