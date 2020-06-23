@@ -1,0 +1,25 @@
+.alert{
+    padding: 8px 16px;
+    align-self: center;
+    margin-left: 16px;
+    color: white;
+    white-space: nowrap;
+    width: 100%;
+
+    transition-duration: .7s;
+    transition-property: width;
+    
+    &.success{
+        background-color:  green;
+    }
+    
+    &.error{
+        background-color: darkred;
+    }
+    
+    &.hidden{
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+    }
+}

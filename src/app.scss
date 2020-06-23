@@ -40,3 +40,23 @@
 
     }
 }
+
+
+.btn{
+    border: none;
+    background-color: $accentColor;
+    text-transform: uppercase;
+    padding: 16px 24px;
+    border-radius: $radiusBorder;
+    cursor: pointer;
+    color: white;
+    letter-spacing: .5px;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: initial;
+    text-decoration: none;
+
+    &:hover{
+        background-color: rgba(34, 27, 21, 0.8);
+    }
+}
