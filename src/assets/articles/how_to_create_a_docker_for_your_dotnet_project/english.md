@@ -1,4 +1,4 @@
-##Dotnet Api on Docker
+## Dotnet Api on Docker
 
 .Net core is cross platform, so we can run our webapi inside a linux container.
 
@@ -56,7 +56,7 @@ docker run -d --name my-project-container -p 5000:80 my-project-image
 ```
 and we can see the results on the browser http://localhost:5000/WeatherForecast
 
-###Explaining the dockerfile
+### Explaining the dockerfile
 
 In the default example of docker website he uses the runtime to run the docker which is spending more than the needed using the self-container strategy.<br />
 So the hole point in here is to use dotnet libraries only on the step needed: **build-stage** and to serve our application we only use the linux alpine container
@@ -94,9 +94,9 @@ we are making explicit that we are exposing and can respond on the port 80
 and here we are defining where is the executable that will start the application
 
 
-###Advanced
+### Advanced
 
-####Tests
+#### Tests
 One the things that we can do before publishing our project is to run our tests using the same dotnet version that will be used inside the container. So one of the strategies is to run the tests inside the dockerfile ***not recommended*** for big projects or that have a robust CI/CD strategy.
 
 So let's create a more robust example with a test project
@@ -149,7 +149,7 @@ ENTRYPOINT ["/app/MyProject"]
 ```
 everything that we need was to run the tests before publishing and defining the path to the publish Project `MyProject` on the publish command
 
-###Conclusion
+### Conclusion
 
 To better manage disk space we use the self-container strategy and the alpine distro.<br/>
 To make sure our environment and build will work we run the tesest inside the docker within the same version that will be used to publish.

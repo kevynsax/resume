@@ -1,4 +1,4 @@
-###Como instalar o Node na versão 12
+### Como instalar o Node na versão 12
 
 O repositório do nodejs nas distribuições do linux baseados no Debian continuam apontando pra antiga versão 8.1 <br/>
 Para instalar as versções mais novas do node é nescessário utilizar o nodeSource para adicionar o repositório manualmente
@@ -21,7 +21,7 @@ Deve aparecer um output parecido com esse:
 >v12.16.3 <br/>
 >6.14.4
 
-###Avançado
+### Avançado
 Para permitir que o npm verifique se existe versões mais novas sem ter avisos como esse:
 >  npm update check failed   
 
@@ -31,7 +31,7 @@ Você deve mudar o dono da pasta configstore.
 sudo chown -R $USER:$(id -gn $USER) "/home/$USER/.config/configstore/"
 ```
 
-###Faça um teste do seu novo ambiente.
+### Faça um teste do seu novo ambiente.
 
 Crie uma pasta para seu novo projeto.
 ```

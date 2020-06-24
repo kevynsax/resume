@@ -1,4 +1,4 @@
-##How to create a Docker for your React Project
+## How to create a Docker for your React Project
 
 The idea here is to use a multiple build step using [node](https://nodejs.org/en/) image to create an optimized build and [nginx](https://www.nginx.com/) image to serve the build of your project
 
@@ -55,7 +55,7 @@ To see the configs from your running project you can execute
 docker ps 
 ```
 
-####Dockerfile explained
+#### Dockerfile explained
 
 So let's breakdown each part of the dockerfile:
 
@@ -83,9 +83,9 @@ We are creating a first intermediate container using node and naming as 'build'.
 `EXPOSE 80`<br/>
 we make explicit that our container will expose the 80 port
 
-###Advanced
+### Advanced
 
-####Routes
+#### Routes
 If you want to use **routes** like [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) you will need create a Nginx config file, because the default config file will not work
 
 Here are the steps to use a custom Nginx config file
@@ -139,7 +139,7 @@ RUN npm run build
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 
-#Next line will copy our newly created file to his rightful place 
+# Next line will copy our newly created file to his rightful place 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
@@ -152,7 +152,7 @@ docker build -t my-project-image .
 docker run --name my-project-container -d -p 3000:80 my-project-image
 ```
 
-####Base Url
+#### Base Url
 
 Sometimes we want to run our application not on the root of our domain e.g. `http://kevynklava.com/my-project/` for this we going to have change the nginx.conf file and the Dockerfile.
 
@@ -203,7 +203,7 @@ COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
 ```
 
-####Base Url + Routes
+#### Base Url + Routes
 If you will use routes and have a base url we goint to need do both previous steps and change our routes
 
 So your nginx.conf will look like this:

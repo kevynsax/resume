@@ -1,4 +1,5 @@
-##How to create a Docker for your Angular Project
+# How to create a Docker for your Angular Project
+
 
 The idea here is to use a multiple build step using [node](https://nodejs.org/en/) image to create an optimized and compact build and [nginx](https://www.nginx.com/) image to serve the compiled files
 
@@ -54,7 +55,7 @@ To see the configs from your running project you can execute
 docker ps 
 ```
 
-####Dockerfile explained
+#### Dockerfile explained
 
 So let's breakdown each part of the dockerfile:
 
@@ -82,9 +83,9 @@ We are creating a first intermediate container using node and naming as 'build'.
 `EXPOSE 80`<br/>
 we make explicit that our container will expose the 80 port
 
-###Advanced
+### Advanced
 
-####Routes
+#### Routes
 If you want to use **routes** you will need create a Nginx config file, because the default config file will not work to change routes
 
 Here are the steps to use a custom Nginx config file
@@ -136,7 +137,7 @@ RUN npx ng build --output-path ./dist
 
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
-#the next line will copy our created nginx conf file to the rightful place
+# the next line will copy our created nginx conf file to the rightful place
 COPY ./nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 ```
@@ -149,7 +150,7 @@ docker run --name my-project-container -d -p 3000:80 my-project-image
 ```
 
 
-####Base Url
+#### Base Url
 
 Sometimes we want to run our application not on the root of our domain e.g. `http://kevynklava.com/my-project/` for this we going to have change the nginx.conf file and the Dockerfile.
 

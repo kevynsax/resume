@@ -1,4 +1,4 @@
-##How to create a Docker for your node project
+## How to create a Docker for your node project
 
 Our goal in this article is to create one project that uses minimal disk spaces, so we will use node alpine image
 
@@ -88,7 +88,7 @@ docker run --name my-project-container -d -p 3000:3000 my-project-image
 
 Then you can open your browser na url http://localhost:3000/
 
-###Dockerfile explained
+### Dockerfile explained
 `FROM node:alpine as build`<br/>
 We are defining that docker image source will be the node using alpine linux
 
@@ -107,9 +107,9 @@ we making explicit to the docker that he will use the port 3000
 `CMD ["npm", "start"]`<br/>
 Here we telling the docker which command he has to execute when runs the container   
 
-###Advanced
+### Advanced
 
-####Typescript
+#### Typescript
 
 If you are using typescript you can only copy the compiled files to the new container<br/>
 And use a multi step build to minimize the disk usage on your server and optimize the runtime<br />

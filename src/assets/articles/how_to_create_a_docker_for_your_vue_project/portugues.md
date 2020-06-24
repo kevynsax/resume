@@ -1,4 +1,4 @@
-##Como criar um Docker para o seu projeto Vue
+## Como criar um Docker para o seu projeto Vue
 
 Nosso objetivo aqui é minimizar o uso de disco e ter uma maior perfomance no uso do app.
 Então iremos criar um multiplo step build utilizando as imagens do [node](https://nodejs.org/en/) e [nginx](https://www.nginx.com/) para construir e servir o seu projeto.
@@ -56,7 +56,7 @@ Para ver as configurações do seu container docker rodando você pode executar:
 docker ps 
 ```
 
-####Explicando o Dockerfile
+#### Explicando o Dockerfile
 
 Então vamos explicar parte por parte do dockerfile
 
@@ -85,9 +85,9 @@ copiando a pasta dist do step de construção(que nós chamamos de contrucao) pa
 Vamos tornar explicito que nosso container irá expor a porta 80
 
 
-###Avançado
+### Avançado
 
-####Rotas
+#### Rotas
 
 Se você for utilizar **rotas** precisaremos criar um arquivo de configuracão do Nginx, se um usuário acessar diretamente uma url de uma rota não principal, nginx não saberá lidar com a requisição.
 
@@ -142,7 +142,7 @@ RUN npm run build
 FROM nginx:alpine
 COPY --from=construcao /app/dist /usr/share/nginx/html
 
-#A proxima linha é a que copiará o arquivo do nginx para o local correto 
+# A proxima linha é a que copiará o arquivo do nginx para o local correto 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80

@@ -1,4 +1,4 @@
-##Setting up your linux server
+## Setting up your linux server
 
 For many projects that we have is important to show to the world.
 And one of the ways is to have a computer accessible to anyone.
@@ -67,7 +67,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-###Swapfile
+### Swapfile
 This server have not much memory(1gb) so is wise to create a swapfile.
 This file will be used by debian to use disk when the system memory is full.
 
@@ -83,7 +83,7 @@ free -h
 you should see some output like<br/>
 ![status swapfile](https://kevyn.com.br/links/setting-up-server/make-swapfile.png)
  
-###Docker
+### Docker
 All of my projects I use docker which makes much more easier to migrate my apps into another place. 
 
 So let's install the docker.
@@ -127,7 +127,7 @@ To run docker without sudo or using another users, which is true in the server, 
 sudo usermod -aG docker $USER 
 ```
 
-###User
+### User
 Is recommended to not use root user for every operation, living only major changes to the root user.
 So we going to create a new user that will run docker commands.
 
@@ -148,7 +148,7 @@ exit
 ssh kevyn@192.81.212.164
 ```
 
-###Projects folder
+### Projects folder
 
 I like to create a folder where I can put all my source code inside.
 So let's create a folder and clone my resume project
@@ -167,9 +167,9 @@ docker run -d -p 80:80 --name resume kevyn-resume
 And then you can test opening your browser on the url http://192.81.212.164
 
 
-###Advanced
+### Advanced
 
-####Domain
+#### Domain
 To use a domain to point to your server you will need to create an `a` entry with the value of your ip server, in this case: `192.81.212.164`<br/>
 Using my domain server(godaddy.com) looks like this
 ![Domain GoDaddy](https://kevyn.com.br/links/setting-up-server/domain.png)
@@ -177,7 +177,7 @@ Using my domain server(godaddy.com) looks like this
 So you can run your website using http://kevyn.com.br <br/>
 If want to run your website with `www` remember to add a CNAME with the key www and the value `@` or `.` or `domain.com`
 
-####HTTPS - SSL
+#### HTTPS - SSL
 Every web site should be running under https protocol, so one group came together and provided one solution for this.
 These organization is called [Let's Encrypt](https://letsencrypt.org) they provide SSL certificates for **free**.
 
@@ -231,7 +231,7 @@ Then we can exit the certbot container and create a nginx container to respond f
 exit
 ```
 
-####Nginx
+#### Nginx
 
 To run more than one app in the same server you will have to have an application to manage all requests.<br />
 Here I decided to use nginx he will redirect all requests.
@@ -292,7 +292,7 @@ nginx -s reload
 ```
 Now you can test your website and should redirect to the https version
 
-####SSH
+#### SSH
 Disable root login. You should always avoid use root login so you should disable it. And for any reason you want to use the root login you can login into Digital Ocean dashboard and open a console to use the root login inside their platform 
 
 Edit the file of ssh config and disable root login
@@ -305,6 +305,6 @@ change the line that enable root login
 PermitRootLogin no
 ```
 
-###Conclusion
+### Conclusion
 
 This is the steps that I take to setup my server. So if you have any thing to add I will be glad to know. 

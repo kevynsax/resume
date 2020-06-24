@@ -1,4 +1,4 @@
-###Como instalar o Docker no Elementary OS
+### Como instalar o Docker no Elementary OS
 
 Por que [Elementary OS](https://elementary.io/) não é uma distribuição do Linux mais nova o [Docker](http://www.docker.com/) **não** possui um repositório específico para o Elementary.
 
@@ -64,7 +64,7 @@ E deverá ver um output do terminal parecido com esse:
 >This message shows that your installation appears to be working correctly. <br />
 >...
 
-####Avançado
+#### Avançado
 
 Se você quer rodar o docker ***sem  o sudo*** você precisa adicionar o seu usuário no grupo do docker. 
 

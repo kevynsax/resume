@@ -1,4 +1,4 @@
-##Como criar um Docker para o seu projeto Angular
+## Como criar um Docker para o seu projeto Angular
 
 A idéia aqui é criar um multiplo steps build utilizando a imagen do [node](https://nodejs.org/en/) para criar um build optimizado e compacto e [nginx](https://www.nginx.com/) imagem para servir os arquivos compilados.
 
@@ -57,7 +57,7 @@ Para ver as configurações do seu container docker rodando você pode executar:
 docker ps 
 ```
 
-####Explicando o Dockerfile
+#### Explicando o Dockerfile
 
 Então vamos explicar parte por parte do dockerfile
 
@@ -86,9 +86,9 @@ copiando a pasta build do step de construção(que nós chamamos de contrucao) p
 Vamos tornar explicito que nosso container irá expor a porta 80
 
 
-###Avançado
+### Avançado
 
-####Rotas
+#### Rotas
 
 Se você for utilizar **rotas** precisaremos criar um arquivo de configuracão do Nginx, porque o arquivo default não funcionará quando mudarmos as rotas
 
@@ -143,7 +143,7 @@ RUN npm run build
 FROM nginx:alpine
 COPY --from=construcao /app/build /usr/share/nginx/html
 
-#A proxima linha é a que copiará o arquivo do nginx para o local correto 
+# A proxima linha é a que copiará o arquivo do nginx para o local correto 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
