@@ -113,14 +113,9 @@ export class ContactForm extends Component<{}, ContactFormState> {
                     multipleLines={true}/>
                     
                 <div className="action">
-                    <Button
-                        label="Send"
-                        onClick={this.sendEmail}
-                    />
-                    
+                    <Button label="Send" onClick={this.sendEmail}/>
                     <Alert message={alert.message} type={alert.type} visible={alert.visible}/>
                 </div>
-                
             </div>
         )
     };
