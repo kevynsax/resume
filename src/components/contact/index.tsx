@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {ContactForm} from "./contactForm";
 import "./contact.scss";
+import {getMenuId, MenuEnum} from "../../utils";
 
 interface Info {
     label: string;
@@ -31,7 +32,7 @@ const informations: Info[] = [
 export default class Contact extends Component{
     render = () => {
         return (
-            <div className="contact section">
+            <div className="contact section" id={getMenuId(MenuEnum.Contact)}>
                 <div className="title">
                     <h1>Contact</h1>
                     <h6>Don't be afraid to contact, mainly if you want some help</h6>

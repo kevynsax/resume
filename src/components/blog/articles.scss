@@ -1,0 +1,61 @@
+@import "../../variables.scss";
+
+.articles {
+    background-color: $backgroundSection;
+    
+    .more{
+        text-align: center;
+        
+        span {
+            padding: 8px 16px;
+            cursor: pointer;
+            
+            &:hover {
+                color: white;
+            }
+        }        
+    }
+    
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 48px;
+        justify-content: space-around;
+
+        > div {
+            $width: 260px;
+            $radius: 4px;
+            $padding: 16px;
+            
+
+
+            display: flex;
+            flex-direction: column;
+            max-width: $width;
+            margin-bottom: 48px;
+            border-radius: $radius;
+            padding-bottom: $padding;
+            background-color: $backgroundBody;
+
+            .wrapperImage {
+                margin-bottom: $padding - 4px;
+
+                img {
+                    width: $width;
+                    border-radius: $radius $radius 0 0;
+                }
+            }
+
+            .headline {
+                font-size: 1.1em;
+                font-weight: bold;
+                padding: 0 $padding 4px;
+                color: white;
+            }
+
+            .subTitle {
+                padding: 0 $padding
+            }
+        }
+    }
+}

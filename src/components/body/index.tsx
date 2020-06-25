@@ -5,7 +5,7 @@ import About from "../about";
 import Skills from "../skills";
 import Portfolio from "../portfolio";
 import Contact from "../contact";
-import Article from "../article";
+import Blog from "../articles";
 
 export default class Body extends Component{
     render = () => {
@@ -14,7 +14,7 @@ export default class Body extends Component{
             <About />
             <Skills />
             <Portfolio />
-            <Article />
+            <Blog />
             <Contact />
         </div>);
     };

@@ -10,7 +10,7 @@ export enum MenuEnum {
     About,
     Skills,
     Portfolio,
-    Posts,
+    Blog,
     Contact
 }
 
@@ -19,7 +19,7 @@ export const menus: MenuItem[] = [
     {id: 'about', type: MenuEnum.About},
     {id: 'skills', type: MenuEnum.Skills},
     {id: 'portfolio', type: MenuEnum.Portfolio},
-    {id: 'posts', type: MenuEnum.Posts},
+    {id: 'blog', type: MenuEnum.Blog},
     {id: 'contact', type: MenuEnum.Contact},
 ];
 

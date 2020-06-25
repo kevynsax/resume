@@ -16,8 +16,17 @@ const socialMedias: SocialMedia[] = [
 ];
 
 export default class Sidebar extends Component {
-    private renderMenu = (item: string, i: number) => 
-        (<a key={i} href={`#${item}`}>{item}</a>);
+    state= {
+        active: ''
+    };
+    
+    private activateMenu = (item: string) => {
+        document.location.assign(`#${item}`);
+        this.setState({active: item});
+    };
+    
+    private renderMenu = (item: string, i: number) => (
+        <span key={i} onClick={() => this.activateMenu(item)} className={this.state.active === item ? 'active' : ''}>{item}</span>);
 
     private renderSocialMedia = (item: SocialMedia, i: number) =>
         (<div key={i} onClick={() => this.openNewTab(item.link)}>
