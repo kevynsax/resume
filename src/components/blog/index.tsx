@@ -65,29 +65,24 @@ const qttPerLine = 3;
 
 export default class Blog extends Component {
     state = {
-        whichLine: 1
+        qttLines: 1
     };
 
     private handleClickMore = () => {
-        const line = this.state.whichLine + 1;
-        this.setState({whichLine: line});
+        const line = this.state.qttLines + 1;
+        this.setState({qttLines: line});
     };
+    
+    private get qttWillShow(): number {
+        return Math.min(this.state.qttLines * qttPerLine, posts.length);
+    }
 
     render = () => {
-        const {whichLine} = this.state;
-        const qttWillShow = whichLine * qttPerLine;
-        const showMore = qttWillShow < posts.length;
+        const {qttLines} = this.state;
+        const showMore = this.qttWillShow < posts.length;
         
-        const height = `${335*whichLine}px`;
-        //
-        // 1 line
-        // 0 1 2
-        //
-        // 2 line
-        // 0 3 1 4 2 5
-        //
-        // 3 line
-        // 0 3 6 1 4 7 2 5 *
+        const height = `${335*qttLines}px`;
+
         return (
             <div className="section articles" id={getMenuId(MenuEnum.Blog)}>
                 <div className="title">
@@ -95,11 +90,11 @@ export default class Blog extends Component {
                     <h6>Some of the articles that I have written</h6>
                 </div>
                 <div className="posts" style={{maxHeight: height, height}}>
-                    {posts.slice(0, qttWillShow).map(this.renderPost)}
+                    {posts.slice(0, this.qttWillShow).map(this.renderPost)}
                 </div>
                 {showMore &&
                 <div className="more">
-                    <span onClick={this.handleClickMore}>more...</span>
+                    <span onClick={this.handleClickMore}> V </span>
                 </div>
                 }
             </div>
@@ -122,23 +117,26 @@ export default class Blog extends Component {
     };
     
     private getPost = (index: number): Post => {
-        const line1 = [0, 1, 2];
-        const line2 = [0, 3, 1, 4, 2, 5];
-        const line3 = [0, 3, 6, 1, 4, 7, 2, 5];
+
+        const {qttLines} = this.state;
         
-        let newIndex = 0;
-        switch (this.state.whichLine) {
-            case 1:
-                newIndex = line1[index];
-                break;
-            case 2:
-                newIndex = line2[index];
-                break;
-            case 3:
-                newIndex = line3[index];
+        let i = 0;
+        let newIndex = -1;
+        for(let column = 0; column < qttPerLine; column++){
+            for(let line = 0; line < qttLines; line++){
+                const val = (line * qttPerLine) + column;
+                
+                if(i === index){
+                    newIndex = val;
+                }
+                
+                if(i > index){
+                    break;
+                }
+                
+                i++;
+            }
         }
-        
-        console.log(`passed index: ${index}, new Index: ${newIndex}`);
         
         return posts[newIndex];
     }

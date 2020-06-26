@@ -5,10 +5,15 @@
     
     .more{
         text-align: center;
+        transform: scale(1.5, .8);
         
         span {
             padding: 8px 16px;
             cursor: pointer;
+            font-size: 24px;
+            
+            transition-duration: .3s;
+            transition-property: color;
             
             &:hover {
                 color: white;
@@ -21,14 +26,12 @@
         flex-direction: column;
         flex-wrap: wrap;
         margin-top: 48px;
-        align-content: space-around;
+        align-content: space-around;        
 
         .cardPost {
             $width: 260px;
             $radius: 4px;
             $padding: 16px;
-            
-
 
             display: flex;
             flex-direction: column;
