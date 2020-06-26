@@ -10,7 +10,7 @@ import ElementaryDocker from "src/assets/images/articles/elementary_docker.jpeg"
 import LinuxServer from "src/assets/images/articles/linux_server.png";
 import NodeOnLinux from "src/assets/images/articles/node_12_linux.jpeg";
 
-import "./articles.scss";
+import "./blog.scss";
 
 interface Post {
     image: string;
@@ -43,7 +43,7 @@ const posts: Post[] = [
         image: DockerNode,
         title: "Node published on Docker container",
         impression: "Using docker to publish your node project"
-    },    
+    },
     {
         image: DockerReact,
         title: "React Served on Nginx Container",
@@ -65,47 +65,82 @@ const qttPerLine = 3;
 
 export default class Blog extends Component {
     state = {
-        whichPage: 1
+        whichLine: 1
     };
-    
+
     private handleClickMore = () => {
-        const page = this.state.whichPage + 1;
-        this.setState({whichPage: page});
+        const line = this.state.whichLine + 1;
+        this.setState({whichLine: line});
     };
-    
+
     render = () => {
-        const qttWillShow = this.state.whichPage * qttPerLine;
+        const {whichLine} = this.state;
+        const qttWillShow = whichLine * qttPerLine;
         const showMore = qttWillShow < posts.length;
+        
+        const height = `${335*whichLine}px`;
+        //
+        // 1 line
+        // 0 1 2
+        //
+        // 2 line
+        // 0 3 1 4 2 5
+        //
+        // 3 line
+        // 0 3 6 1 4 7 2 5 *
         return (
             <div className="section articles" id={getMenuId(MenuEnum.Blog)}>
                 <div className="title">
                     <h1>Blog</h1>
                     <h6>Some of the articles that I have written</h6>
                 </div>
-                <div className="posts">
+                <div className="posts" style={{maxHeight: height, height}}>
                     {posts.slice(0, qttWillShow).map(this.renderPost)}
                 </div>
                 {showMore &&
-                    <div className="more">
-                        <span onClick={this.handleClickMore}>more...</span>
-                    </div>
+                <div className="more">
+                    <span onClick={this.handleClickMore}>more...</span>
+                </div>
                 }
             </div>
         )
     };
 
-    private renderPost(post: Post, index: number) {
+    private renderPost = (_: Post, index: number) => {
+        const post = this.getPost(index);
         return (
-            <div>
-                <div className="wrapperImage">
-                    <img src={post.image} alt={post.title}/>
+            <div key={index}>
+                <div className="cardPost">
+                    <div className="wrapperImage">
+                        <img src={post.image} alt={post.title}/>
+                    </div>
+                    <span className="headline">{post.title}</span>
+                    <span className="subTitle">{post.impression}</span>
                 </div>
-                <span className="headline">{post.title}</span>
-                <span className="subTitle">{post.impression}</span>
             </div>
-           
-
         )
     };
+    
+    private getPost = (index: number): Post => {
+        const line1 = [0, 1, 2];
+        const line2 = [0, 3, 1, 4, 2, 5];
+        const line3 = [0, 3, 6, 1, 4, 7, 2, 5];
+        
+        let newIndex = 0;
+        switch (this.state.whichLine) {
+            case 1:
+                newIndex = line1[index];
+                break;
+            case 2:
+                newIndex = line2[index];
+                break;
+            case 3:
+                newIndex = line3[index];
+        }
+        
+        console.log(`passed index: ${index}, new Index: ${newIndex}`);
+        
+        return posts[newIndex];
+    }
 
 }

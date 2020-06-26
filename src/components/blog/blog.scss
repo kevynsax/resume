@@ -18,11 +18,12 @@
     
     .posts {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         margin-top: 48px;
-        justify-content: space-around;
+        align-content: space-around;
 
-        > div {
+        .cardPost {
             $width: 260px;
             $radius: 4px;
             $padding: 16px;
@@ -49,7 +50,7 @@
             .headline {
                 font-size: 1.1em;
                 font-weight: bold;
-                padding: 0 $padding 4px;
+                padding: 0 $padding 8px;
                 color: white;
             }
 

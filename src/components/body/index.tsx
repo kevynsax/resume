@@ -5,7 +5,7 @@ import About from "../about";
 import Skills from "../skills";
 import Portfolio from "../portfolio";
 import Contact from "../contact";
-import Blog from "../articles";
+import Blog from "../blog";
 
 export default class Body extends Component{
     render = () => {
