@@ -6,26 +6,32 @@ import {getMenuId, MenuEnum} from "../../utils";
 interface Info {
     label: string;
     description: string;
-    isLink?: boolean;
+    link: string;
+    newTab?: boolean;
 }
 
 const informations: Info[] = [
     {
         label: "Phone",
-        description: "+1 (347) 349 5458"
+        description: "+1 (347) 349 5458",
+        link: "tel:+1 (347) 349 5458"
     },
     {
         label: "Email",
         description: "kevynsax@gmail.com",
+        link: 'mailto:kevynsax@gmail.com'
     },
     {
         label: "Linkedin",
-        description: "linkedin.com/in/kevyn-klava-90a15364/",
-        isLink: true
+        description: "kevyn-klava",
+        link: "https://www.linkedin.com/in/kevyn-klava-90a15364/",
+        newTab: true
     },
     {
         label: "WhatsApp",
-        description: "+55 (61) 98589 1092"
+        description: "+55 (61) 98589 1092",
+        link: "https://api.whatsapp.com/send?phone=5561985891092&text=Hi%20Kevyn%2C%20I%20saw%20your%20resume%20and%20I%20was%20wondering%20if%20we%20can%20schedule%20a%20meeting",
+        newTab: true
     },
 ];
 
@@ -51,10 +57,7 @@ export default class Contact extends Component{
         return (
             <div key={index}>
                 <span>{info.label}:</span>
-                {!info.isLink ?
-                    (<span>{info.description}</span>) :
-                    (<a href={`https://www.${info.description}`} rel="noopener noreferrer" target="_blank" >{info.description}</a>)
-                }
+                <a href={info.link} rel="noopener noreferrer" target={info.newTab ? "_blank" : ""} >{info.description}</a>
             </div>
         )
     }

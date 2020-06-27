@@ -54,7 +54,6 @@
     font-weight: bold;
     font-size: 14px;
     font-style: initial;
-    text-decoration: none;
 
     &:hover{
         background-color: rgba(34, 27, 21, 0.8);
@@ -65,4 +64,10 @@
     width: $widthBody;
     max-width: $widthBody;
     overflow-x: hidden;
+}
+
+a {
+    color: blueviolet;
+    text-decoration: none;
+    font-weight: 400;
 }
