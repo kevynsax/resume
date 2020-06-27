@@ -7,6 +7,8 @@ import DockerReact from "../assets/images/articles/docker_react.png";
 import DockerVue from "../assets/images/articles/docker_vue.png";
 import ElementaryDocker from "../assets/images/articles/elementary_docker.jpeg";
 
+export const whatsappNumber = "5561985891092"; 
+
 export interface Post {
     id: string;
     image: string;

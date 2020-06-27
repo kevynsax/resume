@@ -3,6 +3,7 @@ import {getMenuId, MenuEnum} from "../../utils";
 
 import "./blog.scss";
 import {Post, posts} from "../constants";
+import IconButton from "../utils/icon_button";
 
 
 const qttPerLine = 3;
@@ -38,7 +39,7 @@ export default class Blog extends Component {
                 </div>
                 {showMore &&
                 <div className="more">
-                    <span onClick={this.handleClickMore}> V </span>
+                    <IconButton name={"expand_more"} onClick={this.handleClickMore} />
                 </div>
                 }
             </div>

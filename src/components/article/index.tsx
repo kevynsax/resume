@@ -6,6 +6,7 @@ import {Post, posts} from "../constants";
 import Cover from "../cover";
 import IconButton from "../utils/icon_button";
 import {Helmet} from "react-helmet";
+import ShareButton from "./share";
 
 
 interface ArticleQueryParam {
@@ -40,7 +41,7 @@ class Article extends Component<RouteComponentProps<ArticleQueryParam>>{
                     <meta property="og:title"         content={this.article.title} />
                     <meta property="og:description"   content={this.article.impression} />
                 </Helmet>
-                <Cover image={this.article.image} position="100% 40%" buttonStyle={"solid"}/>
+                <Cover image={this.article.image} position="100% 40%" buttonStyle={"outline"}/>
 
                 <div className="actionBar">
                     <div className="leading">
@@ -51,7 +52,7 @@ class Article extends Component<RouteComponentProps<ArticleQueryParam>>{
                         }} />
                         <IconButton name={"dislike"} onClick={() => {}} />
                         <IconButton name={"like"} onClick={() => {}} />
-                        <IconButton name={"share"} onClick={() => {}} />
+                        <ShareButton article={this.article} />
                     </div>
                 </div>
                 

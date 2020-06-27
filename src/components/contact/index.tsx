@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {ContactForm} from "./contactForm";
 import "./contact.scss";
 import {getMenuId, MenuEnum} from "../../utils";
+import {whatsappNumber} from "../constants";
 
 interface Info {
     label: string;
@@ -30,7 +31,7 @@ const informations: Info[] = [
     {
         label: "WhatsApp",
         description: "+55 (61) 98589 1092",
-        link: "https://api.whatsapp.com/send?phone=5561985891092&text=Hi%20Kevyn%2C%20I%20saw%20your%20resume%20and%20I%20was%20wondering%20if%20we%20can%20schedule%20a%20meeting",
+        link: `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=Hi%20Kevyn%2C%20I%20saw%20your%20resume%20and%20I%20was%20wondering%20if%20we%20can%20schedule%20a%20meeting`,
         newTab: true
     },
 ];

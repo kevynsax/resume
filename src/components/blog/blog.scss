@@ -4,21 +4,8 @@
     background-color: $backgroundSection;
     
     .more{
-        text-align: center;
-        transform: scale(1.5, .8);
-        
-        span {
-            padding: 8px 16px;
-            cursor: pointer;
-            font-size: 24px;
-            
-            transition-duration: .3s;
-            transition-property: color;
-            
-            &:hover {
-                color: white;
-            }
-        }        
+        display: flex;
+        justify-content: center;
     }
     
     .posts {
