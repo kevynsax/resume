@@ -40,7 +40,11 @@ class Article extends Component<RouteComponentProps<ArticleQueryParam>>{
                         <IconButton name={"arrow_back"} onClick={this.props.history.goBack}/>
                     </div>
                     <div className="actions">
-                        
+                        <IconButton name={"person"} onClick={() => {document.location.assign(`/#about`);
+                        }} />
+                        <IconButton name={"dislike"} onClick={() => {}} />
+                        <IconButton name={"like"} onClick={() => {}} />
+                        <IconButton name={"share"} onClick={() => {}} />
                     </div>
                 </div>
                 

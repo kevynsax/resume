@@ -11,10 +11,25 @@
 
         display: flex;
         justify-content: space-between;
-    }
 
+
+        .actions{
+            display: flex;
+            
+            
+            > * {
+                margin: 0px 8px;
+            }
+        }
+        
+
+
+    }
     
+  
     .section {
+        padding-top: 0;
+        
         h1 {
             color: white;
             margin: 40px 0;

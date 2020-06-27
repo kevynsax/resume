@@ -1,8 +1,9 @@
 .iconButton{
     $size: 40px;
+    $transitionDuration: .3s;
     width: $size;
     height: $size;
-    transition-duration: .3s;
+    transition-duration: $transitionDuration;
     transition-property: background-color;
     
     border-radius: 50%;
@@ -10,15 +11,20 @@
     
     &:hover{
         background-color: rgba(255, 255, 255, .1);
+        img{
+            filter: invert(1);
+        }
     }
     
     img{
-        filter: invert(1);
-        position: relative;
-
+        filter: invert(0.7);
+        
+        transition-duration: $transitionDuration;
+        transition-property: filter;
+        
+        position: relative;        
         top: 50%;
         left: 50%;
-
         transform: translate(-50%, -50%);
     }
 }

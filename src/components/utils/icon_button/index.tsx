@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./iconButton.scss";
 
 interface IconButtonProperties {
-    name: 'arrow_back' | 'expand_more';
+    name: 'arrow_back' | 'expand_more' | 'dislike' | 'like' | 'person' | 'share';
     onClick: VoidFunction;
 }
 
