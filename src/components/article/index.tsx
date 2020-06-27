@@ -5,6 +5,7 @@ import {RouteComponentProps, withRouter} from "react-router";
 import {Post, posts} from "../constants";
 import Cover from "../cover";
 import IconButton from "../utils/icon_button";
+import {Helmet} from "react-helmet";
 
 
 interface ArticleQueryParam {
@@ -33,6 +34,12 @@ class Article extends Component<RouteComponentProps<ArticleQueryParam>>{
     public render = () => {
         return (
             <div className="article">
+                <Helmet>
+                    <title>{this.article.title}</title>
+                    <meta name="description" content={this.article.impression}/>
+                    <meta property="og:title"         content={this.article.title} />
+                    <meta property="og:description"   content={this.article.impression} />
+                </Helmet>
                 <Cover image={this.article.image} position="100% 40%" buttonStyle={"solid"}/>
 
                 <div className="actionBar">
