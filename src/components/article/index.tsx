@@ -1,25 +1,55 @@
 import React, {Component} from "react";
 import ReactMarkdown from "react-markdown";
 import "./article.scss";
+import {RouteComponentProps, withRouter} from "react-router";
+import {Post, posts} from "../constants";
+import Cover from "../cover";
+import IconButton from "../utils/icon_button";
 
-export default class Article extends Component{
+
+interface ArticleQueryParam {
+    idArticle: string;
+}
+
+class Article extends Component<RouteComponentProps<ArticleQueryParam>>{
     state = {
         markdown: "",
     };
     
-    componentWillMount(): void {
-        const article = require("src/assets/articles/how_to_create_a_docker_for_your_angular_project/english.md");
-        fetch(article).then(res => res.text()).then(text => this.setState({markdown:text}));
+    private get article(): Post{
+        const {idArticle} = this.props.match.params;
+        return posts.findOrFirst(x => x.id === idArticle);
     }
-
-    render = () => {
+    
+    public componentWillMount(): void {
+        const { idArticle } = this.props.match.params;
+        const article = require(`src/assets/articles/${idArticle}/english.md`);
+        
+        fetch(article)
+            .then(res => res.text())
+            .then(text => this.setState({markdown: text}));
+    }
+    
+    public render = () => {
         return (
-            <div className="article section">
-                <ReactMarkdown escapeHtml={false} source={this.state.markdown} />
+            <div className="article">
+                <Cover image={this.article.image} position="100% 40%" buttonStyle={"solid"}/>
+
+                <div className="actionBar">
+                    <div className="leading">
+                        <IconButton name={"arrow_back"} onClick={this.props.history.goBack}/>
+                    </div>
+                    <div className="actions">
+                        
+                    </div>
+                </div>
+                
+                <div className="section">
+                    <ReactMarkdown escapeHtml={false} source={this.state.markdown} />
+                </div>
             </div>
         );
     };
-    
-    componentDidMount(): void {
-    }
 }
+
+export default withRouter(Article);

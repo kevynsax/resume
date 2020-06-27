@@ -4,12 +4,22 @@ import "./cover.scss";
 import DownloadButton from "../utils/download_button";
 import {getMenuId, MenuEnum} from "../../utils";
 
-export default class Cover extends Component{
-    render = () =>
-        (
+interface CoverProps {
+    image?: string;
+    position?: string;
+    buttonStyle?: 'outline' | 'solid';
+}
+const defaultPosition = "100% 25%";
+
+export default class Cover extends Component<CoverProps>{
+    render = () => {
+        const {image, position, buttonStyle} = this.props;
+        
+        return (
             <div className="coverSection" id={getMenuId(MenuEnum.Home)}>
-                <img src={CoverImage} alt="Bicycles"/>
-                <DownloadButton styles="btn-cover"/>
+                <img src={image || CoverImage} style={{objectPosition: position || defaultPosition}} alt="Bicycles"/>
+                <DownloadButton styles={`btnCover ${buttonStyle}`}/>
             </div>
         );
+    };
 }

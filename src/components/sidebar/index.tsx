@@ -21,7 +21,7 @@ export default class Sidebar extends Component {
     };
     
     private activateMenu = (item: string) => {
-        document.location.assign(`#${item}`);
+        document.location.assign(`/#${item}`);
         this.setState({active: item});
     };
     

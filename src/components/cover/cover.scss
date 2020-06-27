@@ -2,16 +2,16 @@
 
 .coverSection{
     position: relative;
+    height: $heightCover;
     
     img{
         width: 100%;
         height: $heightCover;
         object-fit: cover;
-        object-position: 100% 25%;
         filter: brightness(.5);
     }
     
-    .btn-cover{
+    .btnCover{
         z-index: 1;
         position: absolute;
         top: 50%;
@@ -24,6 +24,14 @@
         
         &:hover{
             background: rgba(255, 255, 255, .15);
+        }
+        
+        &.solid{
+            border: 2px solid $accentColorSolid;
+            background-color: $accentColorSolid;
+            &:hover{
+                background-color: rgb(34, 27, 21);
+            }
         }
     }
 }

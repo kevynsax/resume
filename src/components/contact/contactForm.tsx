@@ -58,7 +58,7 @@ export class ContactForm extends Component<{}, ContactFormState> {
         .then((res) => {
             if(res.status > 399){
                 this.showAlert('error', "Error sending message");
-                console.log(res.body);
+                console.error(res.body);
                 return;
             }
             

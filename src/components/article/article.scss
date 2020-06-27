@@ -1,29 +1,44 @@
-.app .article{
-    $codeColor: rgba(0,0,0,.3);
-    
-    h1{
-        color: white;
-        margin: 40px 0 60px;
-    }
-    
-    a{
-        color: blueviolet;
-        text-decoration: none;
-        font-weight: 400;
-    }
-    
-    pre{
+@import "../../variables";
+
+.app .article {
+    $codeColor: rgba(0, 0, 0, .25);
+
+    .actionBar{
+        margin: 16px;
+        padding: 8px 16px;
         background-color: $codeColor;
-        padding: 16px;
-        border-radius: 4px;
-        line-height: 18px;
+        border-radius: 8px;
+
+        display: flex;
+        justify-content: space-between;
     }
+
     
-    p code{
-        background-color: $codeColor;
-        padding: 4px 8px;
-        margin-bottom: 8px;
-        border-radius: 4px;
-        line-height: 30px;
+    .section {
+        h1 {
+            color: white;
+            margin: 40px 0;
+        }
+
+        a {
+            color: blueviolet;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        pre {
+            background-color: $codeColor;
+            padding: 16px;
+            border-radius: 4px;
+            line-height: 18px;
+        }
+
+        p code {
+            background-color: $codeColor;
+            padding: 4px 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            line-height: 30px;
+        }
     }
 }
