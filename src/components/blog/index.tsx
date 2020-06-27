@@ -50,7 +50,7 @@ export default class Blog extends Component {
         const post = this.getPost(index);
         return (
             <div key={index}>
-                <div className="cardPost">
+                <div className="cardPost" onClick={() => document.location.assign(`/blog/${post.id}`)}>
                     <div className="wrapperImage">
                         <img src={post.image} alt={post.title}/>
                     </div>

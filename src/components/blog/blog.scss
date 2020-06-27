@@ -28,6 +28,12 @@
             padding-bottom: $padding;
             background-color: $backgroundBody;
 
+            cursor: pointer;
+            
+            &:hover{
+                background-color: $backgroundBodyHover;
+            }
+
             .wrapperImage {
                 margin-bottom: $padding - 4px;
 

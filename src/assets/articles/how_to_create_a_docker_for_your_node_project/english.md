@@ -1,4 +1,4 @@
-## How to create a Docker for your node project
+# How to create a Docker for your node project
 
 Our goal in this article is to create one project that uses minimal disk spaces, so we will use node alpine image
 

@@ -1,4 +1,4 @@
-## How to create a docker for your Vue project
+# How to create a docker for your Vue project
 
 Our goal here is minimize disk usage and performance on app usage.
 So we will create a multiple build step using the [node](https://nodejs.org/en/) and [nginx](https://www.nginx.com/) images.

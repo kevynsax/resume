@@ -1,4 +1,4 @@
-### How to install Node 12 on Linux
+# How to install Node 12 on Linux
 
 The nodejs repository on the [Debian](https://www.debian.org) based distros still on the old version 8.1<br/>
 To install the newest versions we must use node_source to add manually the repository

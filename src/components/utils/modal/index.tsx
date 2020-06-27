@@ -1,4 +1,4 @@
-import React, {Component, EventHandler, MouseEvent, RefObject} from "react";
+import React, {Component, RefObject} from "react";
 import "./modal.scss";
 
 interface ModalProps {

@@ -1,4 +1,4 @@
-## Setting up your linux server
+# Setting up your linux server
 
 For many projects that we have is important to show to the world.
 And one of the ways is to have a computer accessible to anyone.
