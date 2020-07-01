@@ -10,6 +10,7 @@ interface Info {
 }
 
 export default class About extends Component {
+    
     render = () => {
 
         const today = new Date() as any;

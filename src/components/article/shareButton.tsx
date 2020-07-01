@@ -7,7 +7,7 @@ import Facebook from "src/assets/images/facebook.svg";
 import Twitter from "src/assets/images/twitter.svg";
 import WhatsApp from "src/assets/images/whatsapp.svg";
 
-import "./share.scss";
+import "./shareButton.scss";
 
 interface ShareButtonProps {
     article: Post
@@ -77,7 +77,7 @@ export default class ShareButton extends Component<ShareButtonProps>{
     
     renderSocialMedia = (socialMedia: ShareSocialMedia) => {
         return (
-            <div className="option">
+            <div className="option" key={socialMedia.name}>
                 <a key={socialMedia.name} target="_blank" rel="noopener noreferrer" href={socialMedia.url}>
                     <img src={socialMedia.icon} alt={socialMedia.name}/>
                 </a>

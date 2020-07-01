@@ -6,7 +6,8 @@ import {Post, posts} from "../constants";
 import Cover from "../cover";
 import IconButton from "../utils/icon_button";
 import {Helmet} from "react-helmet";
-import ShareButton from "./share";
+import ShareButton from "./shareButton";
+import {ReactionComponent as Reaction} from "./reaction";
 
 
 interface ArticleQueryParam {
@@ -49,8 +50,7 @@ class Article extends Component<RouteComponentProps<ArticleQueryParam>>{
                     </div>
                     <div className="actions">
                         <IconButton name={"person"} onClick={() => document.location.assign(`/#about`)}/>
-                        <IconButton name={"dislike"} onClick={() => {}} />
-                        <IconButton name={"like"} onClick={() => {}} />
+                        <Reaction idArticle={this.article.id}/>
                         <ShareButton article={this.article} />
                     </div>
                 </div>
