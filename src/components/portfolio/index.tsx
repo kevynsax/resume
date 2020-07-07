@@ -77,7 +77,7 @@ export default class Portfolio extends Component{
                     <div className="overlay">
                         {!!project.gitHubPath &&
                         <a href={project.gitHubPath} rel="noopener noreferrer" target="_blank">
-                            <img src={GitHubImage} alt="GitHub" className="github"/>
+                            <img src={GitHubImage} alt="GitHub" className="github" />
                         </a>
                         }
                         <a href={project.url} rel="noopener noreferrer" target="_blank">

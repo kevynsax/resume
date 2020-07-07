@@ -5,7 +5,7 @@
     width: 100vw;
 
     display: flex;
-
+    flex-direction: column;
 
     font-family: Biotif, sans-serif;
 
@@ -24,10 +24,11 @@
 }
 
 .section {
-    padding: 24px 48px;
+    $basePadding: 12px;
+    padding: $basePadding $basePadding*2;
 
     .title {
-        margin: 24px 0;
+        margin: $basePadding 0;
 
         h1, h6 {
             margin: 0;
@@ -37,7 +38,14 @@
         h1 {
             color: $colorHeadLine
         }
+    }
+    
+    @media only screen and (min-width:768px) {
+        padding: $basePadding * 2 $basePadding * 4;
 
+        .title {
+            margin: $basePadding * 2 0;
+        }
     }
 }
 
@@ -70,4 +78,8 @@ a {
     color: blueviolet;
     text-decoration: none;
     font-weight: 400;
+}
+
+img.icon{
+   filter: invert(.8); 
 }

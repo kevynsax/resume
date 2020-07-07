@@ -1,5 +1,8 @@
-$widthSideBar: 300px;
-$widthBody: calc(100% - #{$widthSideBar});
+$widthSideBar: 100vw;
+$widthBody: 100vw;
+
+$widthSideBarDesktop: 300px;
+$widthBodyDesktop: calc(100% - #{$widthSideBarDesktop});
 
 $heightCover: 28vh;
 

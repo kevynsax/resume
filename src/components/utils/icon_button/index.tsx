@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./iconButton.scss";
 
-export type typeIcon = 'arrow_back' | 'expand_more' | 'dislike' | 'like' | 'person' | 'share';
+export type typeIcon = 'arrow_back' | 'expand_more' | 'dislike' | 'like' | 'person' | 'share' | 'menu';
 
 interface IconButtonProperties {
     name: typeIcon;
@@ -16,7 +16,7 @@ export default class IconButton extends Component<IconButtonProperties>{
         
         return (
             <div className={`iconButton ${style}`} onClick={onClick}>
-                <img src={Image} alt={name}/> 
+                <img src={Image} alt={name} className="icon"/> 
             </div>
         )
     }

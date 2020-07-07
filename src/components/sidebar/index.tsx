@@ -3,6 +3,8 @@ import Linkedin from '../../assets/images/linkedin.png';
 import GitHub from '../../assets/images/github.svg';
 import './sidebar.scss';
 import {getMenuId, menus} from "../../utils";
+import IconMenu from "../../assets/images/menu.svg";
+import IconButton from "../utils/icon_button";
 
 interface SocialMedia {
     component: any;
@@ -17,12 +19,18 @@ const socialMedias: SocialMedia[] = [
 
 export default class Sidebar extends Component {
     state= {
-        active: ''
+        active: '',
+        opened: false
     };
     
-    private activateMenu = (item: string) => {
+    private activateMenu = (item: string): void => {
         document.location.assign(`/#${item}`);
-        this.setState({active: item});
+        this.setState({active: item, opened: false});
+    };
+
+    private openNewTab = (link: string): void => {
+        window.open(link);
+        this.setState({opened: false});
     };
     
     private renderMenu = (item: string, i: number) => (
@@ -30,15 +38,16 @@ export default class Sidebar extends Component {
 
     private renderSocialMedia = (item: SocialMedia, i: number) =>
         (<div key={i} onClick={() => this.openNewTab(item.link)}>
-            <img src={item.component} alt={item.label}/>
+            <img src={item.component} alt={item.label} className="icon"/>
         </div>);
 
-    private openNewTab = (link: string) =>
-        window.open(link);
-
     render = () => {
+        const {opened} = this.state;
         return (
-            <div className='sidebar'>
+            <div className={`sidebar ${opened ? "" : "hide"}`}>
+                <div className="iconMenu">
+                    <IconButton name='menu' onClick={() => this.setState({opened: !opened})}/>
+                </div>
                 <div className="title">
                     <h1>Klava</h1>
                     <div>Kevyn Klava</div>

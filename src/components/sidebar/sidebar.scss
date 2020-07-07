@@ -1,9 +1,10 @@
 @import "../../variables";
-$color: #888;
+
+
 .sidebar {
+    $color: #888;
     width: $widthSideBar;
     
-    height: 100%;
     background: #111;
     color: $color;
 
@@ -11,8 +12,31 @@ $color: #888;
     flex-direction: column;
     justify-content: space-around;
 
+    position: fixed;
+    height: 100%;
+    z-index: 3;
+    
+    &.hide {
+        .title,.menu,.socialMedia{
+            display: none;
+        }
+
+        height: unset;
+    }
+    
+    .iconMenu{ 
+        align-self: flex-end;
+        position: absolute;
+        
+        $alignment: 8px;
+        top: $alignment;
+        right: $alignment * 1.5;
+        z-index: 9;
+    }
+
     .title {
         text-align: center;
+        margin: 16px;
 
         > * {
             padding: 4px;
@@ -58,14 +82,12 @@ $color: #888;
     .socialMedia {
         display: flex;
         justify-content: center;
-        padding: 16px;
 
         > * {
             padding: 8px;
             cursor: pointer;
             img {
                 height: 20px;
-                filter: invert(1);
             }
 
             &:hover img{

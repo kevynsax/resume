@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import IconButton, {typeIcon} from "../utils/icon_button";
-import {Reaction, TypeReactionEnum} from "../../model/types";
+import { TypeReactionEnum} from "../../model/types";
 import {BlogRepo} from "../../model/BlogRepo";
 import "./reaction.scss";
 
@@ -34,7 +34,7 @@ export class ReactionComponent extends Component<ReactionProps, ReactionState>{
         this.blogRepo = new BlogRepo();
     }
     
-    public componentDidMount(): void {
+    public componentWillMount(): void {
         this.updateInternalState();
     }
     
