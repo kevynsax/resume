@@ -1,10 +1,11 @@
 .alert{
     padding: 8px 16px;
     align-self: center;
-    margin-left: 16px;
     color: white;
     white-space: nowrap;
     width: 100%;
+    text-align: center;
+    font-size: .95rem;
 
     transition-duration: .7s;
     transition-property: width;
@@ -22,4 +23,5 @@
         width: 0;
         overflow: hidden;
     }
+    
 }
