@@ -23,7 +23,8 @@
 
         height: unset;
     }
-    
+
+
     .iconMenu{ 
         align-self: flex-end;
         position: absolute;
@@ -93,6 +94,45 @@
             &:hover img{
                 filter: invert(.8);
             }
+        }
+    }
+
+
+
+    @media only screen and (min-width:$tabletWidth) {
+        position: relative;
+        align-items: center;
+        height: unset;
+        justify-content: flex-end;
+
+        .title{
+            margin: 36px 0 12px;
+
+            > * {
+                &:first-child {
+                    font-size: 1.5rem;
+                }
+                &:nth-child(2){
+                    font-size: .8rem;
+                }
+            }
+        }
+        
+        .menu{
+            margin: 12px 0;
+            >*{
+                border-bottom: none;
+            }
+        }
+        
+        &.hide{
+            .title,.menu{
+                display: unset;
+            }
+        }
+        
+        .iconMenu{
+            display: none;
         }
     }
 }
