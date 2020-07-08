@@ -1,5 +1,14 @@
+@import "../../variables";
+
 .contactForm{
+    width: 100%;
     .action{
-        display: flex;
+        text-align: right;
+    }
+    
+    @media only screen and (min-width: $laptopWidth) {
+        .action{
+            text-align: left;
+        }
     }
 }

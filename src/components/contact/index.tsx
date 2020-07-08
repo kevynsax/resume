@@ -45,10 +45,10 @@ export default class Contact extends Component{
                     <h6>Don't be afraid to contact, mainly if you want some help</h6>
                 </div>
                 <div className="contactBody">
-                    <ContactForm />
                     <div className="information">
                         {informations.map(this.renderInfo)}
                     </div>
+                    <ContactForm />
                 </div>
             </div>
         )

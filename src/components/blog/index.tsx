@@ -6,7 +6,7 @@ import {Post, posts} from "../constants";
 import IconButton from "../utils/icon_button";
 
 
-const qttPerLine = 3;
+const qttPerLine = 4;
 
 export default class Blog extends Component {
     state = {
