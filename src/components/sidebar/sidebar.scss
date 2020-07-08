@@ -54,6 +54,7 @@
         }
     }
 
+    $borderBottomMenu: rgba(255, 255, 255, .1) solid 1px;
     .menu {
         display: flex;
         flex-direction: column;
@@ -64,7 +65,7 @@
             margin: 0 $horizontalMargin;
             padding: 16px 0;
             width: calc(100% - #{$horizontalMargin * 2});
-            border-bottom: rgba(255, 255, 255, .1) solid 1px;
+            border-bottom: $borderBottomMenu;
             text-transform: uppercase;
             font-size: .9rem;
             cursor: pointer;
@@ -73,11 +74,8 @@
             transition-property: color, border-bottom-color;
             color: $color;
             
-            &:hover, &.active {
-                color: white;
-                border-bottom-color: rgba(255, 255, 255, .2);
-            }
         }
+        
     }
 
     .socialMedia {
@@ -99,7 +97,7 @@
 
 
 
-    @media only screen and (min-width:$tabletWidth) {
+    @media only screen and (min-width: $tabletWidth) {
         position: relative;
         align-items: center;
         height: unset;
@@ -108,13 +106,12 @@
         .title{
             margin: 36px 0 12px;
 
-            > * {
-                &:first-child {
-                    font-size: 1.5rem;
-                }
-                &:nth-child(2){
-                    font-size: .8rem;
-                }
+            :first-child {
+                font-size: 1.5rem;
+            }
+            
+            :nth-child(2){
+                font-size: .8rem;
             }
         }
         
@@ -126,7 +123,11 @@
         }
         
         &.hide{
-            .title,.menu{
+            .title{
+                display: block;
+            }
+            
+            .menu{
                 display: unset;
             }
         }
@@ -134,5 +135,50 @@
         .iconMenu{
             display: none;
         }
+    }
+    
+    @media only screen and (min-width: $laptopWidth) {
+        width: $widthSideBarLaptop;
+        justify-content: space-around;
+        align-items: unset;
+        
+        &.hide {
+            .title{
+                display: block;
+            }
+            .menu, .socialMedia{
+                display: flex;
+            }
+            
+        }
+
+
+        .title{
+            margin: 0;
+        }
+
+        .menu{
+            margin: 0;
+            > * {
+                border-bottom: $borderBottomMenu;
+                &:hover, &.active {
+                    color: white;
+                    border-bottom-color: rgba(255, 255, 255, .2);
+                }
+            }
+        }
+    }
+    
+    @media only screen and (min-width: $desktopWidth) {
+        .title{
+            margin: 0;
+            :first-child{
+                font-size: 2rem;
+            }
+            :nth-child(2){
+                font-size: 1rem;
+            }
+        }
+
     }
 }

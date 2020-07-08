@@ -22,7 +22,9 @@
     color: $colorFont;
     background-color: $backgroundBody;
     
-
+    @media only screen and (min-width: $laptopWidth) {
+        flex-direction: row;
+    }
 }
 
 .section {
