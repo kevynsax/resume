@@ -28,7 +28,7 @@
 }
 
 .section {
-    $basePadding: 12px;
+    $basePadding: 16px;
     padding: $basePadding $basePadding*2;
 
     .title {
@@ -45,6 +45,7 @@
     }
     
     @media only screen and (min-width: $tabletWidth) {
+        $basePadding: 12px;
         padding: $basePadding * 2 $basePadding * 4;
 
         .title {
@@ -67,6 +68,8 @@
     font-size: 14px;
     font-style: initial;
 
+    white-space: nowrap;
+    
     &:hover{
         background-color: rgba(34, 27, 21, 0.8);
     }
