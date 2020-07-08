@@ -1,65 +1,82 @@
 @import '../../variables';
 
-.about {
+.about .bodyAbout{
     
-    .bodyAbout {
+    display: flex;
+    flex-direction: column;
+
+
+    .picture {
+        text-align: center;
+
+        img {
+            margin: 4px 4px 0;
+            filter: brightness(.7);
+            width: 180px;
+            border-radius: 50%;
+        }
+    }
+
+    .texts {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: space-between;
 
-        $border-radius: 8px;
-
-        .picture {
-            padding: 2px;
-            border: 1px solid #111;
-            border-radius: $border-radius;
-            margin-right: 16px;
-            background-color: #232323;
-
-            img {
-                margin: 4px 4px 0;
-                filter: brightness(.6);
-                width: 320px;
-                border-radius: $border-radius;
-            }
+        h5{
+            margin: 16px 0 8px;
+        }
+        h3 {
+            color: $colorHeadLine;
         }
 
-        .texts {
-            display: flex;
-            flex-direction: column;
+        .infos {
             justify-content: space-between;
-            padding-left: 16px;
+            padding: 28px 0 16px;
 
-            h5{
-                margin: 16px 0 8px;
-            }
-            h3 {
-                color: $colorHeadLine;
-            }
+            .info {
+                padding: 4px 0;
 
-            .infos {
-                justify-content: space-between;
-                padding: 28px 0 16px;
+                span {
+                    &:first-child {
+                    }
 
-                .info {
-                    padding: 4px 0;
-
-                    span {
-                        &:first-child {
-                        }
-
-                        &:last-child {
-                            margin-left: 4px;
-                            font-weight: 600;
-                            color: $colorHeadLine;
-                        }
+                    &:last-child {
+                        margin-left: 4px;
+                        font-weight: 600;
+                        color: $colorHeadLine;
                     }
                 }
             }
+        }
 
-            .actions {
-                padding: 24px 0 24px;
-                margin-bottom: 24px; 
+        .actions {
+            padding: 24px 0 24px;
+            margin-bottom: 24px; 
+        }
+    }
+    
+    @media only screen and (min-width: $tabletWidth) {
+        flex-direction: row;
+        
+        .picture{
+            $border-radius: 8px;
+            
+            margin-right: 16px;
+            padding: 2px;
+            border-radius: $border-radius;
+            border: 1px solid #111;
+
+            background-color: #232323;
+            
+            img{
+                border-radius: $border-radius;
+                width: 320px;
+                filter: brightness(.6);
             }
+        }
+        
+        .texts{
+            padding-left: 16px;
         }
     }
 }
