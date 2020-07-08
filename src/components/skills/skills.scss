@@ -42,30 +42,44 @@
     @media only screen and (min-width: $tabletWidth) {
         .evaluations{
             max-height: 600px;
+            align-content: space-between;
             
             .skillGroup{
-                width: 30vw;
-                
-                .skill{
-                    &:hover {
-                        .label .evaluation {
-                            display: block;
-                        }
+                width: 40vw;
+            }
+        }
+    }
+    
+    @media only screen and (min-width: $laptopWidth) {
+        .evaluations .skillGroup{
+            width: 30vw;
+            .skill{
 
-                        .slider {
-                            border: 1px solid $lightAccentColor;
-
-                            .fulfillment {
-                                background: $lightAccentColor;
-                            }
-                        }
+                &:hover {
+                    .label .evaluation {
+                        display: block;
                     }
-                    
-                    .label .evaluation{
-                        display: none;
+
+                    .slider {
+                        border: 1px solid $lightAccentColor;
+
+                        .fulfillment {
+                            background: $lightAccentColor;
+                        }
                     }
                 }
+                
+                .label .evaluation{
+                    display: none;
+                }
             }
+        }
+    }
+    
+    @media only screen and (min-width: $desktopWidth) {
+        .evaluations{
+            align-content: space-around;
+            
         }
     }
 }
