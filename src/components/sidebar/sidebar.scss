@@ -179,6 +179,27 @@
                 font-size: 1rem;
             }
         }
-
+    }
+    
+    @media only screen and (min-width: $tabletWidth) and (max-height: 425px) {
+        flex-direction: row;
+        justify-content: space-around;
+        
+        .title{
+            margin: 8px;
+            :first-child {
+                font-size: .7rem;
+                line-height: .7rem;
+            }
+            :nth-child(2){
+                font-size: .6rem;
+                line-height: .6rem;
+                margin: 0;
+            }
+        }
+        
+        .menu{
+            margin: 0;
+        }
     }
 }

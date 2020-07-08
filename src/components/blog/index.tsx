@@ -23,7 +23,6 @@ export default class Blog extends Component {
     }
 
     render = () => {
-        const {qttLines} = this.state;
         const showMore = this.qttWillShow < posts.length;
 
         return (
