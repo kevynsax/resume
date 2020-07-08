@@ -74,7 +74,7 @@ export default class Portfolio extends Component{
             <div key={index}>
                 <div className="wrapperImage">
                     <img src={project.image} alt={project.name}/>
-                    <div className="overlay">
+                    <div className="buttons">
                         {!!project.gitHubPath &&
                         <a href={project.gitHubPath} rel="noopener noreferrer" target="_blank">
                             <img src={GitHubImage} alt="GitHub" className="github" />
