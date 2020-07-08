@@ -6,10 +6,10 @@
     .projects{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
         > div{
             cursor: pointer;
-            margin: 16px 0;
+            margin: 16px;
             
             .wrapperImage{
                 position: relative;

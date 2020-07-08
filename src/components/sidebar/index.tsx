@@ -3,7 +3,6 @@ import Linkedin from '../../assets/images/linkedin.png';
 import GitHub from '../../assets/images/github.svg';
 import './sidebar.scss';
 import {getMenuId, menus} from "../../utils";
-import IconMenu from "../../assets/images/menu.svg";
 import IconButton from "../utils/icon_button";
 
 interface SocialMedia {
