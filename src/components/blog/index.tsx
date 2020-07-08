@@ -25,8 +25,6 @@ export default class Blog extends Component {
     render = () => {
         const {qttLines} = this.state;
         const showMore = this.qttWillShow < posts.length;
-        
-        const height = `${335*qttLines}px`;
 
         return (
             <div className="section articles" id={getMenuId(MenuEnum.Blog)}>
@@ -34,7 +32,7 @@ export default class Blog extends Component {
                     <h1>Blog</h1>
                     <h6>Some of the articles that I have written</h6>
                 </div>
-                <div className="posts" style={{maxHeight: height, height}}>
+                <div className="posts">
                     {posts.slice(0, this.qttWillShow).map(this.renderPost)}
                 </div>
                 {showMore &&
@@ -46,8 +44,7 @@ export default class Blog extends Component {
         )
     };
 
-    private renderPost = (_: Post, index: number) => {
-        const post = this.getPost(index);
+    private renderPost = (post: Post, index: number) => {
         return (
             <div key={index}>
                 <div className="cardPost" onClick={() => document.location.assign(`/blog/${post.id}`)}>
@@ -60,30 +57,4 @@ export default class Blog extends Component {
             </div>
         )
     };
-    
-    private getPost = (index: number): Post => {
-
-        const {qttLines} = this.state;
-
-        let i = 0;
-        let newIndex = -1;
-        for(let column = 0; column < qttPerLine; column++){
-            for(let line = 0; line < qttLines; line++){
-                const val = (line * qttPerLine) + column;
-
-                if(i === index){
-                    newIndex = val;
-                }
-
-                if(i > index){
-                    break;
-                }
-
-                i++;
-            }
-        }
-
-        return posts[newIndex];
-    }
-
 }

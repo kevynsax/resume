@@ -10,10 +10,9 @@
     
     .posts {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
         margin-top: 48px;
-        align-content: space-around;        
+        justify-content: space-around;        
 
         .cardPost {
             $width: 260px;
