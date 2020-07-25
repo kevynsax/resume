@@ -54,4 +54,14 @@
             }
         }
     }
+    
+    @media only screen and (min-width: $desktopWidth) {
+        .posts{
+            justify-content: start;
+            
+            >*{
+                margin-right: 56px;
+            }
+        }
+    }
 }

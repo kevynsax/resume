@@ -78,8 +78,11 @@
     
     @media only screen and (min-width: $desktopWidth) {
         .evaluations{
-            align-content: space-around;
+            align-content: start;
             
+            >*{
+                margin-right: 48px;
+            }
         }
     }
 }
