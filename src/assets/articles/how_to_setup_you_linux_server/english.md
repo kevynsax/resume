@@ -82,6 +82,12 @@ free -h
  
 you should see some output like<br/>
 ![status swapfile](https://kevyn.com.br/links/setting-up-server/make-swapfile.png)
+
+to make this swapfile permanent edit your fstab using the command
+
+```bash
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
  
 ### Docker
 All of my projects I use docker which makes much more easier to migrate my apps into another place. 
