@@ -19,7 +19,7 @@ const skillGroup: GroupSkill[] = [
         skills: [
             {
                 label: "NodeJs",
-                evaluation: .76
+                evaluation: .86
             },
             {
                 label: "Dotnet - C#",
@@ -27,7 +27,7 @@ const skillGroup: GroupSkill[] = [
             },
             {
                 label: "Java",
-                evaluation: .33
+                evaluation: .23
             }
         ]
     },
@@ -35,16 +35,16 @@ const skillGroup: GroupSkill[] = [
         title: "Front-end",
         skills: [
             {
-                label: "VueJS",
-                evaluation: .85
-            },
-            {
                 label: "React",
                 evaluation: .92
             },
             {
                 label: "Angular",
                 evaluation: .77
+            },
+            {
+                label: "VueJS",
+                evaluation: .85
             },
             {
                 label: "Html/Css",
@@ -63,6 +63,18 @@ const skillGroup: GroupSkill[] = [
     {
         title: "Others",
         skills: [
+            {
+                label: "Clouds(Aws/Azure)",
+                evaluation: .78
+            },
+            {
+                label: "Docker",
+                evaluation: .89
+            },
+            {
+                label: "Kubernets/Swarm",
+                evaluation: .72
+            },
             {
                 label: "Selenium",
                 evaluation: .68
@@ -83,18 +95,6 @@ const skillGroup: GroupSkill[] = [
                 label: "TDD",
                 evaluation: .83
             },
-            {
-                label: "Docker",
-                evaluation: .89
-            },
-            {
-                label: "Kubernets/Swarm",
-                evaluation: .59
-            },
-            {
-                label: "Clouds(Azure/Aws/Google Cloud)",
-                evaluation: .68
-            }
         ]
     }
 ];
