@@ -43,7 +43,7 @@ export default class About extends Component {
 
                     <div className="texts">
                         <h5>let me introduce my self</h5>
-                        <h3>I'm Kevyn Klava, a Full Stack Developer focused on .Net and NodeJs on the backend</h3>
+                        <h3>I'm Kevyn Klava, a Full Stack Developer focused on NodeJs and Dotnet on the backend</h3>
                         <div className="text">
                             Hi, I am a 10+ years web developer that worked in small and big projects, one of them with a 500 Fortune company.<br/>
                             I have experience being the technical leader, remotely, with big and small(MeTeam) teams.<br/>
