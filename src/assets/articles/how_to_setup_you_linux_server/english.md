@@ -210,17 +210,7 @@ docker run --name certbot -p 80:80 -p 443:443 -v config:/etc/nginx -v config:/et
 First the dependencies
 ```
 apt update
-apt install python software-properties-common gnupg 
-```
-Then lets add the repository
-```
-add-apt-repository ppa:certbot/certbot
-```
-**sometimes gives a message of error, on the thread but you can follow the next steps*
-
-```
-apt update
-apt install python-certbot-nginx
+apt install certbot python3-certbot-nginx
 ```
 
 Finally we can obtain our certificate

@@ -1,4 +1,4 @@
-### Como instalar o Node na versão 12
+### Como instalar o Node na versão 14
 
 O repositório do nodejs nas distribuições do linux baseados no Debian continuam apontando pra antiga versão 8.1 <br/>
 Para instalar as versções mais novas do node é nescessário utilizar o nodeSource para adicionar o repositório manualmente
@@ -6,7 +6,7 @@ Para instalar as versções mais novas do node é nescessário utilizar o nodeSo
 Aqui estão os passos para instalar as versões mais novas
 
 ```
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
@@ -18,8 +18,8 @@ node --version && npm --version
 
 Deve aparecer um output parecido com esse:
 
->v12.16.3 <br/>
->6.14.4
+>v14.18.1<br/>
+>8.1.1
 
 ### Avançado
 Para permitir que o npm verifique se existe versões mais novas sem ter avisos como esse:

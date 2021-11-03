@@ -1,4 +1,4 @@
-# How to install Node 12 on Linux
+# How to install Node 14 on Linux
 
 The nodejs repository on the [Debian](https://www.debian.org) based distros still on the old version 8.1<br/>
 To install the newest versions we must use node_source to add manually the repository
@@ -6,7 +6,7 @@ To install the newest versions we must use node_source to add manually the repos
 Here are the steps to install the newest versions
 
 ```
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
@@ -18,8 +18,8 @@ node --version && npm --version
 
 You should see an output like this:
 
->v12.16.3 <br/>
->6.14.4
+>v14.18.1<br/>
+>8.1.1
 
 ### Advanced
 To let the npm verify for newest updates without getting errors like:

@@ -1,7 +1,7 @@
 import DockerAngular from "../assets/images/articles/docker_angular.png";
 import LinuxServer from "../assets/images/articles/linux_server.png";
 import DockerDotnet from "../assets/images/articles/docker_dotnet_core.jpeg";
-import NodeOnLinux from "../assets/images/articles/node_12_linux.jpeg";
+import NodeOnLinux from "../assets/images/articles/node_linux.jpeg";
 import DockerNode from "../assets/images/articles/docker_node.jpeg";
 import DockerReact from "../assets/images/articles/docker_react.png";
 import DockerVue from "../assets/images/articles/docker_vue.png";
@@ -36,7 +36,7 @@ export const posts: Post[] = [
         impression: "How to setup your dotnet web api on a docker alpine container",
     },
     {
-        id: "how_to_install_node_v12_on_linux",
+        id: "how_to_install_node_on_linux",
         image: NodeOnLinux,
         title: "Install node on Linux",
         impression: "Installing newest versions of node on linux using node source code",
