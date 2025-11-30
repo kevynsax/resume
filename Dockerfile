@@ -1,11 +1,11 @@
-FROM node:22 AS build
+FROM node:20 AS build
 
 WORKDIR /app
 
 COPY . .
 ENV PATH=/app/node_modules/.bin:$PATH
 
-RUN npm install --silent
+RUN npm install
 RUN npm run-script build
 
 FROM nginx:alpine
