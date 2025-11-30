@@ -5,6 +5,7 @@ import ILoveOurHomeImage from "src/assets/images/projects/i-love-our-home.png";
 import StillHaveTimeImage from "src/assets/images/projects/still-have-time.png";
 import JogomaticaImage from "src/assets/images/projects/jogomatica.png";
 import WeddingsMapImage from "src/assets/images/projects/subscription-weddings-map.png";
+import CacaNomesImage from "src/assets/images/projects/cacanomes.png";
 import GitHubImage from "src/assets/images/github.svg";
 import EyeImage from "src/assets/images/eye.svg";
 
@@ -47,12 +48,17 @@ const projects: Project[] = [
         name: "Go And Do",
         image: GoAndDoImage,
         gitHubPath: "https://github.com/capitalChurch/goDoFrontEnd",
-        url: "goanddo"
+        url: "go-and-do"
     },
     {
         name: "Weddings Map",
         image: WeddingsMapImage,
         url: "subscription-weddings-map"
+    },
+    {
+        name: "Caça Nomes",
+        image: CacaNomesImage,
+        url: 'https://cacanomes.com'
     }
 ];
 
