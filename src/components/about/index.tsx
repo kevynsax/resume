@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './about.scss';
 import DownloadButton from "../utils/download_button";
-import Avatar from 'src/assets/images/avatar.png';
+import Avatar from '/avatar.png';
 import {getMenuId, MenuEnum} from "../../utils";
 
 interface Info {

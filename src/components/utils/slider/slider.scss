@@ -1,4 +1,4 @@
-@import "../../../variables";
+@use "../../../variables" as *;
 
 $heightSlider: 8px;
 .slider {

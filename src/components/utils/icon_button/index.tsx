@@ -12,11 +12,10 @@ interface IconButtonProperties {
 export default class IconButton extends Component<IconButtonProperties>{
     render = () => {
         const {name, onClick, style} = this.props;
-        const Image = require(`src/assets/images/${name}.svg`);
-        
+
         return (
             <div className={`iconButton ${style}`} onClick={onClick}>
-                <img src={Image} alt={name} className="icon"/> 
+                <img src={`/images/${name}.svg`} alt={name} className="icon"/>
             </div>
         )
     }

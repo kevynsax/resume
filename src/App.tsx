@@ -2,7 +2,7 @@ import React from 'react';
 import Sidebar from "./components/sidebar";
 import Body from "./components/body";
 import './app.scss';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Article from "./components/article";
 
 const App: React.FC = () => {
@@ -10,14 +10,10 @@ const App: React.FC = () => {
         <Router>
             <div className="app">
                 <Sidebar/>
-                <Switch>
-                    <Route path="/" exact={true}>
-                        <Body />
-                    </Route>
-                    <Route path="/blog/:idArticle">
-                        <Article />
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Body />} />
+                    <Route path="/blog/:idArticle" element={<Article />} />
+                </Routes>
             </div>
         </Router>
     );

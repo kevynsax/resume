@@ -5,7 +5,7 @@ import ILoveOurHomeImage from "src/assets/images/projects/i-love-our-home.png";
 import StillHaveTimeImage from "src/assets/images/projects/still-have-time.png";
 import JogomaticaImage from "src/assets/images/projects/jogomatica.png";
 import WeddingsMapImage from "src/assets/images/projects/subscription-weddings-map.png";
-import CacaNomesImage from "src/assets/images/projects/cacanomes.png";
+import CacaNomesImage from "src/assets/images/projects/caca-nomes.png";
 import GitHubImage from "src/assets/images/github.svg";
 import EyeImage from "src/assets/images/eye.svg";
 
