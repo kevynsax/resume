@@ -11,11 +11,12 @@ import {ReactionComponent as Reaction} from "./reaction";
 
 
 interface ArticleQueryParam {
-    idArticle: string;
+    idArticle: string | undefined;
+    [key: string]: string | undefined;
 }
 
 const Article: React.FC = () => {
-    const params = useParams<ArticleQueryParam>();
+    const params = useParams() as ArticleQueryParam;
     const navigate = useNavigate();
     const [markdown, setMarkdown] = useState("");
 
@@ -51,7 +52,7 @@ const Article: React.FC = () => {
             </div>
 
             <div className="section">
-                <ReactMarkdown escapeHtml={false} source={markdown} />
+                <ReactMarkdown remarkRehypeOptions={{ allowDangerousHtml: true }} children={markdown} />
             </div>
         </div>
     );
